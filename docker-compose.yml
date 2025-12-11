@@ -39,5 +39,13 @@ services:
     depends_on:
       - mongo
       - rabbitmq
+
+  user-ui:
+    build: ./user-ui
+    container_name: user-ui
+    ports:
+      - "5173:5173"
+    depends_on:
+      - user-service
 volumes:
   mongo_data:
